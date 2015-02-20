@@ -9,3 +9,6 @@
 
 # Ignore node_modules dirctory
 /node_modules
+
+# Ignore .sass-cache dirctory
+/.sass-cache

@@ -6,7 +6,8 @@ module.exports =
 		constructor: ->
 			@props = { nouhin: false }
 			# console.log @props
-			# console.log gutil.env.type?
+			console.log gutil.env.type?
+			# console.log prod
 
 			@webpack =
 				# devtool: "#source-map"
