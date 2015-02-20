@@ -2,10 +2,10 @@
 .DS_Store
 
 # Ignore bower_components dirctory
-./bower_components
+/bower_components
 
 # Ignore build dirctory
-./build
+/build
 
 # Ignore node_modules dirctory
-./node_modules
+/node_modules

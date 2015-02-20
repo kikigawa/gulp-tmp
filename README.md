@@ -1,11 +1,9 @@
-# Ignore .DS_store file
-.DS_Store
+# gulp-tmp
+gulp jade,sass,coffee(webpack)
 
-# Ignore bower_components dirctory
-/bower_components
+# set up
+$ npm install
+$ bower install
 
-# Ignore build dirctory
-/build
-
-# Ignore node_modules dirctory
-/node_modules
+# build
+gulp
