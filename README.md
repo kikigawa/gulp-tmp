@@ -11,4 +11,4 @@ gulp jade,sass,coffee(webpack)
 * bower install
 
 # build
-gulp
+gulp --type pc
