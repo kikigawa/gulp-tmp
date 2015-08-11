@@ -10,5 +10,6 @@ gulp jade,sass,coffee(webpack)
 * npm install
 * bower install
 
-# build
-gulp --type pc
+# watch
+* gulp watch
+* gulp watch --type sp

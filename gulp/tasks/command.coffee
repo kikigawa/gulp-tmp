@@ -6,13 +6,6 @@ a           = path.forApp
 b           = path.forBuild
 
 gulp.task 'default', ->
-  console.log '/////////////////////////'
-  console.log '/////////////////////////'
-  console.log '////////default//////////'
-  console.log '/////////////////////////'
-  console.log '/////////////////////////'
-
-
   runSequence 'clean', 'copy', 'jade','styles','scripts', 'delete', 'browser-sync'
 
 gulp.task 'watch', ['default'],  ->

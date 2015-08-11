@@ -11,12 +11,9 @@ class UA
     if e is 'sp'
       @forApp = '/sp/'
       @forBuild = '/sp/'
-    if e is 'pc'
+    else
       @forApp = '/pc/'
       @forBuild = '/'
-    if e is 'yt_test'
-      @forApp = '/yt_test/'
-      @forBuild = '/yt_test/'
 
 
 module.exports = new UA()
