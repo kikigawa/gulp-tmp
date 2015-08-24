@@ -16,7 +16,7 @@ gulp.task 'styles', (cb)->
     sass: 'app'+a+'styles'
     image: 'build'+b+'images'
 
-  gulp.src('./app'+a+'styles/index.sass')
+  gulp.src('./app'+a+'styles/*.sass')
     .pipe plumber()
     .pipe compass opts
     .on "error", gutil.log

@@ -13,7 +13,7 @@ module.exports =
 
       @webpack =
         entry:
-          index: './app'+a+'scripts/index.coffee'
+          main: './app'+a+'scripts/main.coffee'
           vendor: ['jquery','greensock']
 
         output:
