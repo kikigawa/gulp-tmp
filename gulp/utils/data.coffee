@@ -1,19 +1,19 @@
-path    = require 'path'
-
+path    = require "path"
+url     = require "url"
+fs      = require "fs"
+yaml    = require "js-yaml"
 
 
 module.exports = (file) ->
-  root      = "/Users/Kiki/Documents/works/quiksilver/repos/app/pc/layouts/"
-  dir       = path.dirname file.path
-  relative  = path.relative dir, root
-  name      = path.relative(root, dir)
+  # root      = "./build/"
+  # dir       = path.dirname file.path
+  # relative  = path.relative dir, root
+  # name      = path.relative(root, dir)
 
-  if name is ""
-    name      = "index"
-    relative  = "."
+
 
   data =
-    id: name
-    root: relative
-
-  return data
+    meta: yaml.safeLoad fs.readFileSync "./app/common/data/meta.yml", "utf8"
+    # id: name
+    # root: file
+    # root: url.format(urlObj)

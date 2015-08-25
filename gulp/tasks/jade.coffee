@@ -15,11 +15,12 @@ gulp.task 'jade', (cb)->
 
   gulp.src('./app'+a+'layouts/index.jade')
     .pipe plumber()
-    # .pipe data (file) ->
-    #   dp  = '../utils/data.coffee'
-    #   out = require(dp)(file)
-    #   delete require.cache[ path.resolve(dp) ]
-    #   return out
+    .pipe data (file) ->
+      dp  = '../utils/data.coffee'
+      out = require(dp)(file)
+      # out = require(dp)(file)
+      # delete require.cache[ path.resolve(dp) ]
+      return out
     .pipe jade
       pretty: true
     .on "error", gutil.log

@@ -1,3 +1,5 @@
+- var meta = locals.meta
+
 doctype html
 html
   head
@@ -7,20 +9,20 @@ html
     meta(name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
 
 
-    meta(name="keywords" content="キーワード")
-    meta(name="description" content="ディスクリプション")
+    meta(name="keywords" content="#{meta.keywords}")
+    meta(name="description" content="#{meta.description}")
 
     // ogp
-    meta(property="og:title" content="タイトル")
-    meta(property="og:url" content="hogehoge.jp")
-    meta(property="og:description" content="ディスクリプション")
+    meta(property="og:title" content="#{meta.title}")
+    meta(property="og:url" content="#{meta.ogurl}")
+    meta(property="og:description" content="#{meta.description}")
     meta(property="og:image" content="")
     meta(property="og:locale" content="ja_JP")
     meta(property="fb:app_id" content="")
     meta(property="og:type" content="website")
     meta(property="og:site_name" content="")
 
-    title gulp-tmp
+    title #{meta.title}
 
 
 
