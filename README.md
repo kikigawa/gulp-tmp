@@ -1,7 +1,8 @@
 #gulp-tmp
-jadeは共通
-scriptも共通
-styleはわけてる
+
+* jadeは共通
+* scriptも共通
+* styleはわけてる
 
 
 ## set up
