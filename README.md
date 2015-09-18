@@ -1,15 +1,16 @@
-gulp-tmp
-===========
+#gulp-tmp
 
-gulp jade,sass,coffee(webpack)
+* jadeは共通
+* scriptも共通
+* styleはわけてる
 
 
-
-# set up
+## set up
 
 * npm install
 * bower install
 
-# watch
+## watch
 * gulp watch
 * gulp watch --type sp
+
