@@ -14,3 +14,8 @@
 * gulp watch
 * gulp watch --type sp
 
+## directory
+* build/
+* build/sp/
+
+
