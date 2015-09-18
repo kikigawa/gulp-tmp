@@ -1,17 +1,8 @@
-
-@import ./components/normalize/normalize
-@import compass
-@import ./components/module
-
-body
-
+.isPC
+  display: none !important
 body,html
-  margin: 0
-  padding: 0
-
-ul,li,h1,h2,h3,h4,h5,h6,p,span
-  list-style-type: none
-  margin: 0
-  padding: 0
-  line-height: 1em
-  font-weight: normal
+  width: 100%
+  height: 100%
+#container
+  +fullScreen($min:340px)
+  margin: 0 auto
