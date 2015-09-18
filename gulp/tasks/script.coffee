@@ -14,7 +14,7 @@ gc = new Config()
 gulp.task 'scripts', (cb)->
   a = path.forApp
   b = path.forBuild
-  gulp.src('./app'+a+'scripts/*.coffee')
+  gulp.src('./app/common/scripts/*.coffee')
     .pipe webpack gc.webpack
     .pipe gulp.dest('./build'+b+'scripts/')
     .pipe bSync.reload stream: true

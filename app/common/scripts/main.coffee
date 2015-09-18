@@ -1,5 +1,5 @@
-Trace = require "../../common/scripts/modules/trace"
-Ua    = require "../../common/scripts/modules/ua"
+Trace = require "./modules/trace"
+Ua    = require "./modules/ua"
 
 
 module.exports =
