@@ -26,11 +26,13 @@ html
     <![endif]-->
 
     link( href="./styles/main.css" rel="stylesheet" )
-    script(src="./scripts/vendor.bundle.js", type='text/javascript', charset='UTF-8')
-    script( src="./scripts/main.js" type="text/javascript" )
+
+    //- script(src="https://maps.googleapis.com/maps/api/js" type="text/javascript")
+    script(src="./common/scripts/vendor.bundle.js" type="text/javascript" charset="UTF-8")
+    script(src="./common/scripts/main.js" type="text/javascript")
 
   body
-    div#container
+    #container
       include _header
       block main
       include _footer

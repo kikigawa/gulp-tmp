@@ -10,3 +10,6 @@ gulp.task 'copy', (cb)->
 
   gulp.src('./app'+a+'images/**/*{png,jpg}')
     .pipe gulp.dest('./build'+b+'images/')
+
+  gulp.src('./app/common/images/**/*{png,jpg}')
+    .pipe gulp.dest('./build/common/images/')
