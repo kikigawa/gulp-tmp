@@ -13,16 +13,18 @@ module.exports =
 
       @webpack =
         entry:
-          # main: './app'+a+'scripts/main.coffee'
           main: './app/common/scripts/main.coffee'
-          vendor: ['jquery','greensock']
+          # vendor: ['jquery','greensock']
+          # vendor: ['zepto','greensock']
+          vendor: ['greensock']
 
         output:
           filename: '[name].js'
 
         module:
           loaders: [
-           { test: /jquery\.js$/, loader: 'expose?jQuery!expose?$' }
+           # { test: /jquery\.js$/, loader: 'expose?jQuery!expose?$' }
+           { test: /zepto(\.min)?\.js$/, loader: "exports?Zepto; delete window.$; delete window.Zepto;" }
            { test: /\.coffee$/, loader: 'coffee-loader' }
           ]
         resolve:
@@ -34,8 +36,8 @@ module.exports =
            new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin('bower.json', ['main'])
           ])
           new webpack.ProvidePlugin
-           $: 'jquery'
-           jQuery: 'jquery'
+           $: 'zepto/zepto.min.js'
+           # jQuery: 'zepto/zepto.min.js'
 
           new webpack.optimize.CommonsChunkPlugin('vendor','vendor.bundle.js')
         ]
