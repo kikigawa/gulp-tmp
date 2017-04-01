@@ -6,12 +6,14 @@ a           = path.forApp
 b           = path.forBuild
 
 gulp.task 'default', ->
-  runSequence 'clean', 'copy', 'jade','styles','scripts', 'delete', 'browser-sync'
+  console.log("DEFAULT")
+  runSequence 'clean', 'copy', 'jade','styles','scripts', 'browser-sync'
 
 gulp.task 'watch', ['default'],  ->
 
 
-  gulp.watch 'app/common/layouts/**/*.{jade,json,coffee}', ['jade']
-  gulp.watch 'app'+a+'styles/**/*.sass', ['copy','styles']
-  gulp.watch 'app/common/scripts/**/*.coffee', ['scripts']
+  gulp.watch 'app/**/*.{jade,json,yml}', ['jade']
+  gulp.watch 'app/**/*.{png,jpg}', ['copy']
+  gulp.watch 'app/styles/**/*.sass', ['styles']
+  gulp.watch 'app/scripts/**/*.coffee', ['scripts']
 

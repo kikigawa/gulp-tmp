@@ -1,0 +1,48 @@
+// #Cont article#article_specon .wrap_parallax .parallax[name="1"]
+#Cont
+  #article_wrap
+    &[date="2.1"]
+      #wrap_navigation
+        height: 42px
+        @media screen and (max-width:$size-custom-navigation)
+          height: 22px
+        .navigation[name="origin"]
+          height: 42px
+          @media screen and (max-width:$size-custom-navigation)
+            height: 22px
+          ul
+            display: none
+        .navigation[name="fixed"]
+          display: none
+      article
+        &#article_specon
+          padding: 0
+          .title
+            display: none
+          .adjust_padding
+            display: none
+          .wrap_parallax
+            .parallax[name="1"]
+              top: -310px
+        &#article_tvcm
+          display: none
+        &#article_products
+          padding: 0
+          .wrap_new
+            display: none
+          .inner[size="fit"]
+            margin-top: 30px
+    &[date="2.7"]
+      #wrap_navigation
+        .navigation[name="origin"], .navigation[name="fixed"]
+          ul
+            li[name="specon"]
+              display: none
+      article
+        &#article_specon
+          padding: 0
+          .title
+            display: none
+          .adjust_padding
+            display: none
+    &[date="2.9"]

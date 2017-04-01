@@ -1,19 +1,19 @@
-path        = require "../utils/path.coffee"
+path    = require "path"
 gulp        = require "gulp"
 plumber     = require "gulp-plumber"
 Config      = require "../utils/config.coffee"
 gutil       = require "gulp-util"
 data        = require "gulp-data"
 jade        = require "gulp-jade"
+rename      = require "gulp-rename"
 bSync       = require "./browserSync"
+replace     = require "gulp-replace"
 
 
 # html
 gulp.task "jade", (cb)->
-  a = path.forApp
-  b = path.forBuild
 
-  gulp.src("./app/common/layouts/index.jade")
+  gulp.src(["./app/layouts/**/*.jade", "!./app/layouts/**/_*.jade"])
     .pipe plumber()
     .pipe data (file) ->
       dp  = "../utils/data.coffee"
@@ -21,6 +21,10 @@ gulp.task "jade", (cb)->
     .pipe jade
       pretty: true
     .on "error", gutil.log
-    .pipe gulp.dest("./build/"+b)
-    # .pipe gulp.dest("./build/sp/")
+    .pipe rename (file) ->
+      console.log(file.basename)
+      if file.basename != "index"
+        file.basename = file.basename+"/index"
+        
+    .pipe gulp.dest("./build/")
     .pipe bSync.reload stream: true

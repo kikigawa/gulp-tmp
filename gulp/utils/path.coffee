@@ -8,6 +8,7 @@ class UA
 
 
   initPath:(e) =>
+    directory = "/products/beer/greenlabel/lemon/"
     if e is 'sp'
       @forApp = '/sp/'
       @forBuild = '/sp/'

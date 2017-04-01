@@ -5,20 +5,19 @@ plumber     = require 'gulp-plumber'
 gutil       = require "gulp-util"
 Config      = require '../utils/config.coffee'
 bSync       = require './browserSync'
-# minifyCSS   = require 'gulp-minify-css'
+minifyCSS   = require 'gulp-minify-css'
 # gulpif      = require 'gulp-if'
 
 gulp.task 'styles', (cb)->
-  a = path.forApp
-  b = path.forBuild
   opts =
-    css: 'build'+b+'styles'
-    sass: 'app'+a+'styles'
-    image: 'build'+b+'images'
+    css: 'build/assets/styles'
+    sass: 'app/styles'
+    image: 'build/assets/images'
 
-  gulp.src('./app'+a+'styles/*.sass')
+  gulp.src('./app/styles/*.sass')
     .pipe plumber()
     .pipe compass opts
     .on "error", gutil.log
-    .pipe gulp.dest('./build'+b+'styles/')
+    .pipe minifyCSS()
+    .pipe gulp.dest('./build/assets/styles/')
     .pipe bSync.reload stream: true

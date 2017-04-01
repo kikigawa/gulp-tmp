@@ -13,7 +13,7 @@ module.exports =
 
       @webpack =
         entry:
-          main: './app/common/scripts/main.coffee'
+          main: './app/scripts/main.coffee'
           # vendor: ['jquery','greensock']
           # vendor: ['zepto','greensock']
           vendor: ['greensock']
@@ -37,7 +37,7 @@ module.exports =
           ])
           new webpack.ProvidePlugin
            $: 'zepto/zepto.min.js'
-           # jQuery: 'zepto/zepto.min.js'
+           jQuery: 'zepto/zepto.min.js'
 
           new webpack.optimize.CommonsChunkPlugin('vendor','vendor.bundle.js')
         ]

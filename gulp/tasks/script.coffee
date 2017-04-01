@@ -1,20 +1,26 @@
 path        = require "../utils/path.coffee"
 gulp        = require 'gulp'
 webpack     = require 'gulp-webpack'
+browserify = require 'gulp-browserify'
 plumber     = require 'gulp-plumber'
 Config      = require "../utils/config.coffee"
-# Config      = require '../utils/config'
-# wpconfig    = require '../utils/webpack'
+coffee = require 'gulp-coffee'
+rename = require 'gulp-rename'
 bSync       = require './browserSync'
-# uglify      = require 'gulp-uglify'
-# gulpif      = require 'gulp-if'
 
 gc = new Config()
 
+
+
+
+# gulp.task 'scripts', (cb)->
+#   gulp.src('./app/scripts/*.coffee', read: false).pipe(browserify(
+#     transform: [ 'coffeeify' ]
+#     extensions: [ '.coffee' ])).pipe(rename('main.js')).pipe gulp.dest('./build/scripts')
+
+
 gulp.task 'scripts', (cb)->
-  a = path.forApp
-  b = path.forBuild
-  gulp.src('./app/common/scripts/*.coffee')
+  gulp.src('./app/scripts/*.coffee')
     .pipe webpack gc.webpack
-    .pipe gulp.dest('./build/common/scripts/')
+    .pipe gulp.dest('./build/assets/scripts/')
     .pipe bSync.reload stream: true
