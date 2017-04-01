@@ -1,7 +1,7 @@
 path        = require "../utils/path.coffee"
 gulp        = require 'gulp'
 webpack     = require 'gulp-webpack'
-browserify = require 'gulp-browserify'
+# browserify = require 'gulp-browserify'
 plumber     = require 'gulp-plumber'
 Config      = require "../utils/config.coffee"
 coffee = require 'gulp-coffee'
