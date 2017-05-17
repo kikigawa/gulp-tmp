@@ -52,6 +52,32 @@ $text-gray: #888
   @if $adjustIs == 1
     +adjustMargin($size, $space, $line)
 
+@font-face
+  font-family: NotoSansCJKjp-Regular
+  src: url("../font/NotoSansCJKjp/NotoSansCJKjp-Regular.eot")
+  src: url("../font/NotoSansCJKjp/NotoSansCJKjp-Regular.ttf") format("truetype"), url("../font/NotoSansCJKjp/NotoSansCJKjp-Regular.woff") format("woff"),url("../font/NotoSansCJKjp/NotoSansCJKjp-Regular.woff2") format("woff2")
+
+@mixin f-NotoSansCJKjp-Regular($size:14, $space:0.1, $line:1, $adjustIs:1)
+  font-family: "NotoSansCJKjp-Regular"
+  font-size: $size +px
+  letter-spacing: $space +em
+  line-height: $line +em
+  @if $adjustIs == 1
+    +adjustMargin($size, $space, $line)
+
+@font-face
+  font-family: NotoSansCJKjp-Light
+  src: url("../font/NotoSansCJKjp/NotoSansCJKjp-Light.eot")
+  src: url("../font/NotoSansCJKjp/NotoSansCJKjp-Light.ttf") format("truetype"), url("../font/NotoSansCJKjp/NotoSansCJKjp-Light.woff") format("woff"),url("../font/NotoSansCJKjp/NotoSansCJKjp-Light.woff2") format("woff2")
+
+@mixin f-NotoSansCJKjp-Light($size:14, $space:0.1, $line:1, $adjustIs:1)
+  font-family: "NotoSansCJKjp-Light"
+  font-size: $size +px
+  letter-spacing: $space +em
+  line-height: $line +em
+  @if $adjustIs == 1
+    +adjustMargin($size, $space, $line)
+
 // @font-face
 //   font-family: NotoSansCJKjp-Regular
 //   src: url("../font/NotoSansCJKjp/NotoSansCJKjp-Regular.eot")
