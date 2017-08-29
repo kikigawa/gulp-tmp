@@ -21,10 +21,16 @@ gulp.task "jade", (cb)->
     .pipe jade
       pretty: true
     .on "error", gutil.log
-    .pipe rename (file) ->
-      console.log(file.basename)
-      if file.basename != "index"
-        file.basename = file.basename+"/index"
-        
+    .pipe rename (path) ->
+      # console.log(file.basename)
+      # if file.basename != "index"
+      #   file.basename = file.basename+"/index"
+      name = path.basename
+      name = name.split(":")
+      dir  = name.join("/")
+      if path.basename != "top"
+        path.dirname += "/"+dir
+      path.basename = "index"
+
     .pipe gulp.dest("./build/")
     .pipe bSync.reload stream: true

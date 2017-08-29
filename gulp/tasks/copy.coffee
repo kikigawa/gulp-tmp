@@ -6,11 +6,8 @@ del         = require 'del'
 
 gulp.task 'copy', (cb)->
 
-  gulp.src('./app/images/**/*{png,jpg,ico,svg}')
+  gulp.src('./app/images/**/*.{png,jpg,ico,svg}')
     .pipe gulp.dest('./build/assets/images/')
-
-  gulp.src('./app/images/**/*{png,jpg,ico,svg}')
-    .pipe gulp.dest('./build/assets/images')
 
   gulp.src('./app/scripts/plugin/*.js')
     .pipe gulp.dest('./build/assets/scripts/plugin/')

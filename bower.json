@@ -14,7 +14,6 @@
   ],
   "dependencies": {
     "greensock": "~1.13.2",
-    "jquery": "1.11.1",
     "zepto": "1.1.6"
   }
 }

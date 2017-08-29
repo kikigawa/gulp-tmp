@@ -13,7 +13,7 @@ gulp.task 'watch', ['default'],  ->
 
 
   gulp.watch 'app/**/*.{jade,json,yml}', ['jade']
-  gulp.watch 'app/**/*.{png,jpg}', ['copy']
+  gulp.watch 'app/**/*.{png,jpg,gif,ico}', ['delete','copy']
   gulp.watch 'app/styles/**/*.sass', ['styles']
   gulp.watch 'app/scripts/**/*.coffee', ['scripts']
 

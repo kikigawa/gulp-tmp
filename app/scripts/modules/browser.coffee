@@ -8,9 +8,11 @@ class Browser
     @isIE9 = false
     @isFirefox = false
     @isSafari = false
+    @isChrome = false
     @isMobile = false
     @isAndroid = false
     @isiOS = false
+    @isPC = false
     @init()
 
   init: =>
@@ -27,8 +29,10 @@ class Browser
         @isIE11 = (version[0] ^ 0) == 11
     else if @userAgent.match('firefox')
       @isFirefox = true
-    else if @userAgent.match('safari')
+    else if @userAgent.match('safari') and @userAgent.indexOf('chrome') == -1
       @isSafari = true
+    else if @userAgent.match('chrome')
+     @isChrome = true
 
     if @userAgent.search(/iphone/) != -1 or @userAgent.search(/ipad/) != -1 or @userAgent.search(/ipod/) != -1
       @isMobile = true
@@ -37,13 +41,9 @@ class Browser
       @isMobile = true
       @isAndroid = true
 
-    # trace '@isIE = '+ @isIE
-    # trace '@isIE8 = '+ @isIE8
-    # trace '@isFirefox = '+ @isFirefox
-    # trace '@isMobile = '+ @isMobile
-    # trace '@isAndroid = '+ @isAndroid
-    # trace '@isiOS = '+ @isiOS
-    # alert @isIE8
+    if !@isMobile
+      @isPC = true
+
 
 
   redirect: (hash) =>

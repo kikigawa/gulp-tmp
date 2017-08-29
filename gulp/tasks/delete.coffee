@@ -3,4 +3,4 @@ gulp        = require 'gulp'
 del         = require 'del'
 
 gulp.task 'delete', (cb)->
-  del ['build/assets/images/sprites-dir'], cb
+  del ['build/assets/images/**/*.{png,jpg,gif,ico}'], cb
